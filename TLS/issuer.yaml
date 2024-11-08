@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: rr6880@srmist.edu.in.com
+    privateKeySecretRef:
+      name: wisecow-tls-secret
+    solvers:
+      - http01:
+          ingress: {}
